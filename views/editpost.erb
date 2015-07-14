@@ -1,0 +1,22 @@
+<article class="type-system-sans">
+  <h1> Edit Your Post </h1>
+
+  <form action="/posts" method="post">
+    <label for="post_title">Title:</label><br />
+    <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
+    <br />
+
+    <label for="post_body">Content:</label><br />
+    <textarea id="post_body" name= "post[body]" rows="5">
+      <%= @post.body %>
+    </textarea>
+    <br />
+
+    <label for="post_body">Author:</label><br />
+    <input id="post_author" name="post[author]" type="text" value="<%= @post.author %>" />
+    <br />
+
+    <input type="submit" value="Edit Post" />
+
+  </form>
+</article>

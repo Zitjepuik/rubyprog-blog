@@ -1,0 +1,28 @@
+<article class="type-system-sans">
+
+
+<% @posts.each do |post| %>
+
+    <h1><%= post.title %></h1>
+
+    <p class="date"><%= post.created_at %></p>
+    <p>
+      <%=
+      if post.body.length < 100
+        post.body
+      else
+          "#{post.body[0..100]}..."
+      end %>
+    <hr>
+    <p class="author"><%= post.author %></p>
+      <hr>
+    <p>
+      <% if session[:logged_in] %>
+        <a href="/post/<%= post.id %>/edit">Edit</a> or
+        <a href="/post/<%= post.id %>/delete">Delete</a>
+      <% end %>
+    </p>
+  <hr>
+
+<% end %>
+</article>
